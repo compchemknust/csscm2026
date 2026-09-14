@@ -1,0 +1,4 @@
+*.swap
+*.log
+*.dist
+*.vscode
