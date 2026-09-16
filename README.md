@@ -46,52 +46,31 @@ There is **no registration or participation fee**. Participants cover their own 
 
 ## Materials
 
-Workshop teaching materials live alongside this repository in the CSSCM 2026 workspace. Use them in this order unless the day’s timetable says otherwise.
+Topic folders live in [`materials/`](materials/). Each topic (and its `slides/`, `exercises/`, and `lab/` folders) has its own README.
 
-### Lecture slides
+### Scientific computing
 
-`csscm2026-materials/Slides/`
-
-| File | Session |
+| Topic | Folder |
 | --- | --- |
-| `1_intro_to_linux.pdf` | Linux and the scientific computing environment |
-| `2_command_line.pdf` | Command-line tools |
-| `3_awk.pdf` | Text processing with AWK |
-| `4_shell_scripting.pdf` | Shell scripting |
-| `5_Plotting with GNUPLOT_notes.pdf` | Scientific plotting with GNUPLOT |
-| `day1_intro_python.pdf` | Python for scientific computing (Day 1) |
-| `day_2.pdf` / `day_3.pdf` | Python follow-on sessions |
-| `PYTHON PROGRAMMING ASSIGNMENT(1).docx` | Programming assignment |
+| **Linux command line** | [`linux-command-line/`](materials/linux-command-line/) |
+| **CLI tools and file operations** | [`cli-tools-and-file-operations/`](materials/cli-tools-and-file-operations/) |
+| **Advanced shell tools (AWK, SED)** | [`advanced-shell-tools/`](materials/advanced-shell-tools/) |
+| **Text editing and shell scripting** | [`text-editing-and-shell-scripting/`](materials/text-editing-and-shell-scripting/) |
+| **Scientific plotting with GNUPLOT** | [`scientific-plotting-with-gnuplot/`](materials/scientific-plotting-with-gnuplot/) |
 
-### Hands-on exercises
+The shell-scripting topic includes a [lab](materials/text-editing-and-shell-scripting/lab/) with a basic walkthrough and an **advanced** script. GNUPLOT includes a [lab](materials/scientific-plotting-with-gnuplot/lab/) with `.dat` files and `plot.gp`.
 
-`exercises/` and matching sheets in `csscm2026-materials/Slides/`
+### Python
 
-| Sheet | Focus |
+| Topic | Folder |
 | --- | --- |
-| `Day1-introduction to Scientific computing Exercise` | First lab: environment, files, and basic commands |
-| `Day2-Introduction to command_Line_tools_exercise.pdf` | Command-line practice |
-| `Day3-Introduction to command_Line_tools_exercise.pdf` | AWK exercises |
-| `Day4-Introduction_to_text_editing_shell_Scripting_exercise.pdf` | Editors and shell scripts |
-| `Day-Introduction_ploting_with_GNUPLOT_exercise.pdf` | GNUPLOT exercises |
+| **Python as a scientific computing tool** | [`python-scientific-computing/`](materials/python-scientific-computing/) |
+| **Data storage, loops, and conditionals** | [`python-control-flow/`](materials/python-control-flow/) |
+| **Modules** | [`python-modules/`](materials/python-modules/) |
 
-### Scientific Computing 1
+### Coming next
 
-`Scientific Computing 1/`
-
-The full scientific-computing track, including notes, labs, and data:
-
-- `sci_computing.pdf` — course notes
-- `Day1`–`Day4` exercise PDFs
-- `Day4-1/` and `Tutorial-Class_2026/` — shell-scripting labs and hands-on files
-- `gnuplot_materials/` and `SMR3821_Day5_materials/` — plotting scripts, `.dat` series, and example figures
-- `soln.pdf` — worked solutions (use after you attempt the exercises)
-
-### Poster
-
-`poster/CSSCM_2026_Poster_Professional.pdf`
-
-Official workshop poster: dates, venue, topics, directors, lecturers, tutors, application links, and funding acknowledgement (Office of the Provost, College of Science, KNUST).
+The Python assignment and the official poster. Solutions (`soln.pdf`) stay unpublished until after the labs.
 
 ---
 
@@ -99,9 +78,8 @@ Official workshop poster: dates, venue, topics, directors, lecturers, tutors, ap
 
 1. Join the [online stream](https://tinyurl.com/csscm2026-stream) if you are not on site.
 2. Follow the [timetable](https://tinyurl.com/csscm2026-schedule) for the day’s room, lecturer, and session type.
-3. Open the matching slide deck in `csscm2026-materials/Slides/`.
-4. Work the exercise sheet for that day. Keep a terminal and a text editor ready.
-5. For Scientific Computing 1 labs, copy the relevant folder, then run scripts from that directory so relative data paths resolve.
+3. Open the matching topic folder under [`materials/`](materials/).
+4. Work the exercise sheet for that topic. Keep a terminal and a text editor ready.
 
 **Suggested toolkit**
 
@@ -112,15 +90,18 @@ Official workshop poster: dates, venue, topics, directors, lecturers, tutors, ap
 
 ---
 
-## Scientific Computing 1 — day map
+## Topic map
 
-| Day | Lecture | Lab |
+| Topic | Lecture | Lab |
 | --- | --- | --- |
-| **1** | Linux & scientific computing | Introduction to scientific computing |
-| **2** | Command-line tools | Command-line exercises |
-| **3** | AWK | AWK / command-line tools |
-| **4** | Text editing & shell scripting | `Day4-1` scripting labs |
-| **5** | GNUPLOT | Plotting notes, `.gp` scripts, and data files |
+| **Linux command line** | Environment and the shell | Scientific computing exercise |
+| **CLI tools and file operations** | Basic tools and files | Command-line exercise |
+| **Advanced shell tools** | AWK, SED, and filters | AWK / SED exercise |
+| **Text editing and shell scripting** | Editors and scripts | Sheet + `lab/basic-walkthrough.sh` and `lab/advanced.sh` |
+| **Scientific plotting with GNUPLOT** | Plotting notes | `lab/plot.gp` and `.dat` series |
+| **Python as a scientific tool** | Why Python for research | — |
+| **Data storage, loops, conditionals** | Collections, `for`, `if` | — |
+| **Modules** | Importing libraries | — |
 
 ---
 

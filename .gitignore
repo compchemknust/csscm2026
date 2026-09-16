@@ -2,3 +2,5 @@
 *.log
 *.dist
 *.vscode
+.DS_Store
+.flowbaby/
