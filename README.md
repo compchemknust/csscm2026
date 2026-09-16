@@ -22,7 +22,6 @@ The programme is open to professionals and students at different levels who want
 | | |
 | --- | --- |
 | **On site** | College of Science, Room SF14, KNUST |
-| **Remote** | [Microsoft Teams stream](https://tinyurl.com/csscm2026-stream) |
 | **Timetable** | [Workshop schedule](https://tinyurl.com/csscm2026-schedule) |
 | **Apply** | [events.nims.edu.gh/e/csscm](https://events.nims.edu.gh/e/csscm) |
 | **Contact** | [compchem@knust.edu.gh](mailto:compchem@knust.edu.gh) |
@@ -46,27 +45,27 @@ There is **no registration or participation fee**. Participants cover their own 
 
 ## Materials
 
-Topic folders live in [`materials/`](materials/). Each topic (and its `slides/`, `exercises/`, and `lab/` folders) has its own README.
+Each topic lives under a session folder in [`materials/`](materials/). Each topic (and its `slides/`, `exercises/`, and `lab/` folders) has its own README.
 
 ### Scientific computing
 
-| Topic | Folder |
-| --- | --- |
-| **Linux command line** | [`linux-command-line/`](materials/linux-command-line/) |
-| **CLI tools and file operations** | [`cli-tools-and-file-operations/`](materials/cli-tools-and-file-operations/) |
-| **Advanced shell tools (AWK, SED)** | [`advanced-shell-tools/`](materials/advanced-shell-tools/) |
-| **Text editing and shell scripting** | [`text-editing-and-shell-scripting/`](materials/text-editing-and-shell-scripting/) |
-| **Scientific plotting with GNUPLOT** | [`scientific-plotting-with-gnuplot/`](materials/scientific-plotting-with-gnuplot/) |
+| Session | Topic | Folder |
+| --- | --- | --- |
+| **1** | **Linux command line** | [`session-1/linux-command-line/`](materials/session-1/linux-command-line/) |
+| **2** | **CLI tools and file operations** | [`session-2/cli-tools-and-file-operations/`](materials/session-2/cli-tools-and-file-operations/) |
+| **3** | **Advanced shell tools (AWK, SED)** | [`session-3/advanced-shell-tools/`](materials/session-3/advanced-shell-tools/) |
+| **4** | **Text editing and shell scripting** | [`session-4/text-editing-and-shell-scripting/`](materials/session-4/text-editing-and-shell-scripting/) |
+| **5** | **Scientific plotting with GNUPLOT** | [`session-5/scientific-plotting-with-gnuplot/`](materials/session-5/scientific-plotting-with-gnuplot/) |
 
-The shell-scripting topic includes a [lab](materials/text-editing-and-shell-scripting/lab/) with a basic walkthrough and an **advanced** script. GNUPLOT includes a [lab](materials/scientific-plotting-with-gnuplot/lab/) with `.dat` files and `plot.gp`.
+Session 4 includes a [lab](materials/session-4/text-editing-and-shell-scripting/lab/) with a basic walkthrough and an **advanced** script. Session 5 includes a [lab](materials/session-5/scientific-plotting-with-gnuplot/lab/) with `.dat` files and `plot.gp`.
 
 ### Python
 
-| Topic | Folder |
-| --- | --- |
-| **Python as a scientific computing tool** | [`python-scientific-computing/`](materials/python-scientific-computing/) |
-| **Data storage, loops, and conditionals** | [`python-control-flow/`](materials/python-control-flow/) |
-| **Modules** | [`python-modules/`](materials/python-modules/) |
+| Session | Topic | Folder |
+| --- | --- | --- |
+| **6** | **Python as a scientific computing tool** | [`session-6/python-scientific-computing/`](materials/session-6/python-scientific-computing/) |
+| **7** | **Data storage, loops, and conditionals** | [`session-7/python-control-flow/`](materials/session-7/python-control-flow/) |
+| **8** | **Modules** | [`session-8/python-modules/`](materials/session-8/python-modules/) |
 
 ### Coming next
 
@@ -76,10 +75,9 @@ The Python assignment and the official poster. Solutions (`soln.pdf`) stay unpub
 
 ## Getting started
 
-1. Join the [online stream](https://tinyurl.com/csscm2026-stream) if you are not on site.
-2. Follow the [timetable](https://tinyurl.com/csscm2026-schedule) for the day’s room, lecturer, and session type.
-3. Open the matching topic folder under [`materials/`](materials/).
-4. Work the exercise sheet for that topic. Keep a terminal and a text editor ready.
+1. Follow the [timetable](https://tinyurl.com/csscm2026-schedule) for the day’s room, lecturer, and session type.
+2. Open the matching session folder under [`materials/`](materials/).
+3. Work the exercise sheet for that topic. Keep a terminal and a text editor ready.
 
 **Suggested toolkit**
 
@@ -92,16 +90,16 @@ The Python assignment and the official poster. Solutions (`soln.pdf`) stay unpub
 
 ## Topic map
 
-| Topic | Lecture | Lab |
-| --- | --- | --- |
-| **Linux command line** | Environment and the shell | Scientific computing exercise |
-| **CLI tools and file operations** | Basic tools and files | Command-line exercise |
-| **Advanced shell tools** | AWK, SED, and filters | AWK / SED exercise |
-| **Text editing and shell scripting** | Editors and scripts | Sheet + `lab/basic-walkthrough.sh` and `lab/advanced.sh` |
-| **Scientific plotting with GNUPLOT** | Plotting notes | `lab/plot.gp` and `.dat` series |
-| **Python as a scientific tool** | Why Python for research | — |
-| **Data storage, loops, conditionals** | Collections, `for`, `if` | — |
-| **Modules** | Importing libraries | — |
+| Session | Topic | Lecture | Lab |
+| --- | --- | --- | --- |
+| **1** | **Linux command line** | Environment and the shell | Scientific computing exercise |
+| **2** | **CLI tools and file operations** | Basic tools and files | Command-line exercise |
+| **3** | **Advanced shell tools** | AWK, SED, and filters | AWK / SED exercise |
+| **4** | **Text editing and shell scripting** | Editors and scripts | Sheet + `lab/basic-walkthrough.sh` and `lab/advanced.sh` |
+| **5** | **Scientific plotting with GNUPLOT** | Plotting notes | `lab/plot.gp` and `.dat` series |
+| **6** | **Python as a scientific tool** | Why Python for research | — |
+| **7** | **Data storage, loops, conditionals** | Collections, `for`, `if` | — |
+| **8** | **Modules** | Importing libraries | — |
 
 ---
 
@@ -122,7 +120,6 @@ Hosted by the Theoretical and Computational Chemistry Laboratory, KNUST.
 
 - **Repository:** [github.com/compchemknust/csscm2026](https://github.com/compchemknust/csscm2026)
 - **Application:** [events.nims.edu.gh/e/csscm](https://events.nims.edu.gh/e/csscm)
-- **Live stream:** [tinyurl.com/csscm2026-stream](https://tinyurl.com/csscm2026-stream)
 - **Schedule:** [tinyurl.com/csscm2026-schedule](https://tinyurl.com/csscm2026-schedule)
 - **Email:** [compchem@knust.edu.gh](mailto:compchem@knust.edu.gh)
 

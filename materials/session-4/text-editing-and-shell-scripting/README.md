@@ -8,4 +8,4 @@ Editors (`nano`, `vim`, Emacs) and writing shell scripts. This topic includes th
 | **Exercise** | [`exercises/text-editing-and-shell-scripting-exercise.pdf`](exercises/text-editing-and-shell-scripting-exercise.pdf) |
 | **Lab** | [`lab/`](lab/) — data plus basic and advanced reference scripts |
 
-**Previous:** [Advanced shell tools](../advanced-shell-tools/) · **Next:** [Scientific plotting with GNUPLOT](../scientific-plotting-with-gnuplot/)
+**Previous:** [Session 3 · Advanced shell tools](../../session-3/advanced-shell-tools/) · **Next:** [Session 5 · Scientific plotting with GNUPLOT](../../session-5/scientific-plotting-with-gnuplot/)

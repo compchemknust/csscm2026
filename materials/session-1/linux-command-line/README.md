@@ -7,4 +7,4 @@ First scientific-computing session: the Linux environment, the shell, and how yo
 | **Slides** | [`slides/intro-to-linux.pdf`](slides/intro-to-linux.pdf) |
 | **Exercise** | [`exercises/scientific-computing-exercise.pdf`](exercises/scientific-computing-exercise.pdf) |
 
-**Next:** [CLI tools and file operations](../cli-tools-and-file-operations/)
+**Next:** [Session 2 · CLI tools and file operations](../../session-2/cli-tools-and-file-operations/)

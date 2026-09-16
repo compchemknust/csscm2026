@@ -6,4 +6,4 @@ Importing and using modules in scientific Python.
 | --- | --- |
 | **Slides** | [`slides/python-modules.pdf`](slides/python-modules.pdf) |
 
-**Previous:** [Data storage, loops, and conditionals](../python-control-flow/)
+**Previous:** [Session 7 · Data storage, loops, and conditionals](../../session-7/python-control-flow/)

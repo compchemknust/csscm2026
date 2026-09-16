@@ -7,4 +7,4 @@ Text processing on the command line with **AWK**, **SED**, and related filters �
 | **Slides** | [`slides/advanced-shell-tools.pdf`](slides/advanced-shell-tools.pdf) |
 | **Exercise** | [`exercises/awk-sed-exercise.pdf`](exercises/awk-sed-exercise.pdf) |
 
-**Previous:** [CLI tools and file operations](../cli-tools-and-file-operations/) · **Next:** [Text editing and shell scripting](../text-editing-and-shell-scripting/)
+**Previous:** [Session 2 · CLI tools and file operations](../../session-2/cli-tools-and-file-operations/) · **Next:** [Session 4 · Text editing and shell scripting](../../session-4/text-editing-and-shell-scripting/)
