@@ -1,0 +1,17 @@
+Equilibrium Geometry
+%NProcshared=24
+%Chk=checkpoint.chk
+%mem=10GB
+#n M062X/6-311G(d,p) Opt Freq Test
+
+Pre transition state calculation
+%NProcshared=24
+%Chk=checkpoint.chk
+%mem=10GB
+#n M062X/6-311G(d,p) opt=(tight,modredundant) freq test
+
+Full transition state
+%NProcshared=24
+%Chk=checkpoint.chk
+%mem=10GB
+#n M062X/6-311G(d,p) opt=(calcall,tight,ts,noeigentest) freq=noraman 

@@ -1,0 +1,20 @@
+Equilibrium Geometry
+
+%NProcshared=24
+%Chk=checkpoint.chk
+%mem=10GB
+#n MPWB95/6-311G(d,p) iop(3/76=0560004400) Opt Freq Test 
+
+Pre transition state calculation
+
+%NProcshared=24
+%Chk=checkpoint.chk
+%mem=10GB
+#n MPWB95/6-311G(d,p) opt=(tight,modredundant) iop(3/76=0560004400) freq test 
+
+Full transition state
+
+%NProcshared=24
+%Chk=checkpoint.chk
+%mem=10GB
+#n MPWB95/6-311G(d,p) opt=(calcall,maxcycles=1000000,tight,ts,noeigentest) freq=noraman iop(3/76=0560004400) int=ultrafine 
