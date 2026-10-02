@@ -1,0 +1,562 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2019.2 (Released June 5, 2019) -->
+<HTML lang="EN">
+<HEAD>
+<TITLE>User's Guide for the QE-modes package</TITLE>
+<META NAME="description" CONTENT="User's Guide for the QE-modes package">
+<META NAME="keywords" CONTENT="user_guide">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2019.2">
+
+<LINK REL="STYLESHEET" HREF="user_guide.css">
+
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<IMG WIDTH="81" HEIGHT="24" ALT="next_inactive" SRC="nx_grp_g.png"> 
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up_g.png"> 
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev_g.png">   
+<BR>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<P>
+
+<P>
+<H1 class="CENTER">
+  <IMG STYLE=""
+ SRC="./quantum_espresso.png"
+ ALT="Image quantum_espresso"> 
+<BR>  <FONT SIZE="+4"><TT>QE-emacs-modes</TT> User's Guide (v.7.1) 
+</FONT></H1>
+<DIV>
+
+</DIV>
+
+<P>
+<BR>
+
+<H2><A ID="SECTION00010000000000000000">
+Contents</A>
+</H2>
+<!--Table of Contents-->
+
+<UL>
+<LI><A ID="tex2html19"
+  HREF="user_guide.html#SECTION00020000000000000000">1 Introduction</A>
+<LI><A ID="tex2html20"
+  HREF="user_guide.html#SECTION00030000000000000000">2 Terms of use</A>
+<LI><A ID="tex2html21"
+  HREF="user_guide.html#SECTION00040000000000000000">3 Installation</A>
+<UL>
+<LI><A ID="tex2html22"
+  HREF="user_guide.html#SECTION00041000000000000000">3.1 Installing the QE-modes package</A>
+<LI><A ID="tex2html23"
+  HREF="user_guide.html#SECTION00042000000000000000">3.2 Editing the user-init-file file</A>
+</UL>
+<BR>
+<LI><A ID="tex2html24"
+  HREF="user_guide.html#SECTION00050000000000000000">4 Usage</A>
+<UL>
+<LI><A ID="tex2html25"
+  HREF="user_guide.html#SECTION00051000000000000000">4.1 Available modes defined by qe-modes</A>
+<LI><A ID="tex2html26"
+  HREF="user_guide.html#SECTION00052000000000000000">4.2 Commands</A>
+<LI><A ID="tex2html27"
+  HREF="user_guide.html#SECTION00053000000000000000">4.3 Auto-completion mechanism</A>
+<UL>
+<LI><A ID="tex2html28"
+  HREF="user_guide.html#SECTION00053100000000000000">4.3.1 Selection of card's flag value</A>
+</UL>
+<LI><A ID="tex2html29"
+  HREF="user_guide.html#SECTION00054000000000000000">4.4 Controlling indentation</A>
+<LI><A ID="tex2html30"
+  HREF="user_guide.html#SECTION00055000000000000000">4.5 Note to Vi users</A>
+</UL>
+<BR>
+<LI><A ID="tex2html31"
+  HREF="user_guide.html#SECTION00060000000000000000">About this document ...</A>
+</UL>
+<!--End of Table of Contents-->
+<P>
+
+<H1><A ID="SECTION00020000000000000000">
+1 Introduction</A>
+</H1>
+
+<P>
+This guide covers the usage of <TT>QE-emacs-modes</TT> package (aka <TT>QE-modes</TT>): an
+open-source collection of Emacs major-modes for making the editing of
+Q<SMALL>UANTUM </SMALL>ESPRESSO (QE) input files somewhat easier and more comfortable with Emacs
+editor. The package provides syntax highlighting (see
+Figure&nbsp;<A HREF="#fig:example"><IMG  ALT="[*]" SRC="crossref.png"></A>), basic auto-indentation, and several utility
+commands.
+
+<P>
+
+<H1><A ID="SECTION00030000000000000000">
+2 Terms of use</A>
+</H1>
+
+<P>
+<TT>QE-modes</TT> is free software, released under the
+GNU General Public License. See:
+<TT>http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt</TT>, or the
+file <TT>License</TT> in the Q<SMALL>UANTUM </SMALL>ESPRESSO distribution.
+
+<P>
+The <TT>QE-modes</TT> package was written by Anton Kokalj. The implementation
+of <TT>QE-modes</TT> was made possible by several useful and helpful resources
+that are gratefully acknowledged, in particular: <I>Mode Tutorial</I>
+of Scott Andrew Borton
+(<TT>https://www.emacswiki.org/emacs/ModeTutorial</TT> for indentation
+code), <I>Derived Mode</I> and <I>Sample Mode</I> pages
+(<TT>https://www.emacswiki.org/emacs/DerivedMode</TT>,
+<TT>https://www.emacswiki.org/emacs/SampleMode</TT>) as well as the
+very useful resources of Xah Lee
+(<TT>http://ergoemacs.org/emacs/elisp_syntax_coloring.html</TT>). Sebastijan
+Peljhan is acknowledged for his work on <TT>xsf-mode</TT> that
+inspired the idea of writing the <TT>QE-modes</TT>. Last but not the least,
+Hongyi Zhao contributed the <TT>ido-completion-read</TT> snippet of
+Elisp code for selecting the values for the card's flags.
+
+<P>
+
+<DIV class="CENTER"><A ID="fig:example"></A><A ID="254"></A>
+<TABLE>
+<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
+A <TT>pw.x</TT> input file opened with <FONT COLOR="#8a2be2"><TT>pw-mode</TT></FONT> in Emacs. Note the
+    highlighted elements: namelists and their variables (blue and
+    brown), cards and their flags (purple and green), comments (red),
+    string and logical variable values (burgundy and cyan,
+    respectively). Note that mistyped variable (i.e. <TT>ibrv</TT>
+    instead of <TT>ibrav</TT>) is not highlighted.</CAPTION>
+<TR><TD>
+<DIV class="CENTER">  <IMG STYLE=""
+ SRC="./highlight.png"
+ ALT="Image highlight">
+  </DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<H1><A ID="SECTION00040000000000000000">
+3 Installation</A>
+</H1>
+
+<P>
+The installation of <TT>QE-modes</TT> package consists of two parts: (i)
+installing the package itself and (ii) informing Emacs about it by
+editing the <code>user-init-file</code> (typically <code>$HOME/.emacs</code>).
+
+<P>
+
+<H2><A ID="SECTION00041000000000000000">
+3.1 Installing the <TT>QE-modes</TT> package</A>
+</H2>
+Once the <TT>QE-modes-7.1.tar.gz</TT> archive is unpacked and you
+are located in its root directory, the installation is trivial. Simply use:
+<PRE>
+   ./install.sh
+</PRE>
+which will install the package in the <TT>qe-modes</TT> subdirectory of the
+<TT>$HOME/.emacs.d/</TT> directory (the script copies the <TT>QE-modes</TT> <TT>*.el</TT> files to <TT>$HOME/.emacs.d/</TT> and byte-compiles
+them into <TT>*.elc</TT> files).
+
+<P>
+If you prefer to install <TT>QE-modes</TT> into other directory, use instead:
+<DIV class="LEFT">
+<code>   prefix=</code><FONT COLOR="#0000ff"><TT><I>where-to-install</I></TT></FONT><code> ./install.sh</code>
+
+</DIV>
+which will install the package in the <TT>qe-modes</TT> subdirectory of
+<FONT COLOR="#0000ff"><TT><I>where-to-install</I></TT></FONT> directory.
+
+<P>
+
+<H2><A ID="SECTION00042000000000000000">
+3.2 Editing the <TT>user-init-file</TT> file</A>
+</H2>
+
+<P>
+A default <TT>QE-modes</TT> snippet for <TT>user-init-file</TT> is provided by
+the <TT>qe-modes.emacs</TT> file in the <TT>QE-modes</TT> source package root
+directory. If <TT>QE-modes</TT> were installed in default
+  <code>$HOME/.emacs.d/qe-modes/</code> location, <B>then the
+  <TT>qe-modes.emacs</TT> file can be used verbatim; just append its
+  content to your <code>~/.emacs</code> file</B>.
+
+<P>
+Here is a the explanation of the simplified <TT>qe-modes.emacs</TT>
+file.  Emacs is informed about the installed <TT>QE-modes</TT> by the
+following lines in the <code>user-init-file</code> (e.g. <code>$HOME/.emacs</code>):
+<DIV class="LEFT">
+
+<FONT COLOR="#ff0000"><code>   ;; make sure package is visible to emacs (if needed)</code></FONT>
+<BR><code>   (add-to-list 'load-path "</code><FONT COLOR="#0000ff"><TT><I>/full/path/name/of</I></TT></FONT><code>/qe-modes")</code>
+<BR>
+<BR>
+<FONT COLOR="#ff0000"><code>   ;; load the package</code></FONT>
+<BR><code>   (require 'qe-modes)</code>
+
+</DIV>
+where <FONT COLOR="#0000ff"><TT><I>/full/path/name/of</I></TT></FONT> is the directory where the <TT>qe-modes</TT> are installed (either the <TT>$HOME/.emacs.d/</TT> or the above
+<FONT COLOR="#0000ff"><TT><I>where-to-install</I></TT></FONT>).
+
+<P>
+Furthermore, we can specify some filename patterns so that Emacs will
+automatically recognize from the filename if it is some variant of the
+Q<SMALL>UANTUM </SMALL>ESPRESSO input file.
+Say that we use the <code>.in</code> extension for the Q<SMALL>UANTUM </SMALL>ESPRESSO input files in
+general and more specifically, the <TT>pw.</TT>, <TT>scf.</TT>,
+<TT>relax.</TT>, and <TT>vc-relax.</TT> prefixes for the <TT>pw.x</TT> input files
+and <TT>neb.</TT>, <TT>cp.</TT>, <TT>ph.</TT>,  and <TT>pp.</TT> prefixes for the
+<TT>neb.x</TT>, <TT>cp.x</TT>, <TT>ph.x</TT>, and <TT>pp.x</TT> input files. These filename recognitions can be
+achieved by:
+<DIV class="LEFT">
+
+<FONT COLOR="#ff0000"><code>   ;; automatically open the *.in files with generic QE mode</code></FONT>
+<BR><code>   (add-to-list 'auto-mode-alist  '("\\.in\\'" . qe-mode))</code>
+<BR>
+<BR>
+<FONT COLOR="#ff0000"><code>   ;; automatically open the pw*.in, scf*.in, relax*in, vc-relax*.in files</code>
+<BR><code>   ;; with pw.x mode</code></FONT>
+<BR><code>   (add-to-list 'auto-mode-alist  '("/pw.*\\.in\\'" . pw-mode))</code>
+<BR><code>   (add-to-list 'auto-mode-alist  '("/scf.*\\.in\\'" . pw-mode))</code>
+<BR><code>   (add-to-list 'auto-mode-alist  '("/relax.*\\.in\\'" . pw-mode))</code>
+<BR><code>   (add-to-list 'auto-mode-alist  '("/vc-relax.*\\.in\\'" . pw-mode))</code>
+<BR>
+<BR>
+<FONT COLOR="#ff0000"><code>   ;; automatically open the neb*.in files with neb.x mode</code></FONT>
+<BR><code>   (add-to-list 'auto-mode-alist  '("/neb.*\\.in\\'" . neb-mode))</code>
+<BR>
+<BR>
+<FONT COLOR="#ff0000"><code>   ;; automatically open the cp*.in files with cp.x mode</code></FONT>
+<BR><code>   (add-to-list 'auto-mode-alist  '("/cp.*\\.in\\'" . cp-mode))</code>
+<BR>
+<BR>
+<FONT COLOR="#ff0000"><code>   ;; automatically open the ph*.in files with ph.x mode</code></FONT>
+<BR><code>   (add-to-list 'auto-mode-alist  '("/ph.*\\.in\\'" . ph-mode))</code>
+<BR>
+<BR>
+<FONT COLOR="#ff0000"><code>   ;; automatically open the pp*.in files with pp.x mode</code></FONT>
+<BR><code>   (add-to-list 'auto-mode-alist  '("/pp.*\\.in\\'" . pp-mode))</code>
+<BR>
+<BR>
+</DIV>
+Beware that the more general <TT>*.in</TT> pattern for the generic
+<FONT COLOR="#8a2be2"><TT>qe-mode</TT></FONT><A ID="tex2html2"
+  HREF="#foot106"><SUP>1</SUP></A> should be specified first
+or else any <TT>*.in</TT> file will be recognized as generic QE input
+file.
+
+<P>
+For those who are fans of regular-expressions, the above four lines
+for <FONT COLOR="#8a2be2"><TT>pw-mode</TT></FONT> can be expressed by the following one-liner:
+<FONT SIZE="-1">  </FONT><PRE>
+   (add-to-list 'auto-mode-alist '("/\\(pw\\|scf\\|\\(?:vc-\\)?relax\\).*\\.in\\'" . pw-mode))
+</PRE>
+
+If we want that emacs opens <TT>*.pwtk</TT> files in the PWTK QE mode,
+we can use:
+<DIV class="LEFT">
+
+<FONT COLOR="#ff0000"><code>   ;; automatically open the *.pwtk files with the PWTK mode</code></FONT>
+<BR><code>   (add-to-list 'auto-mode-alist  '("\\.pwtk\\'" . pwtk-mode))</code>
+<BR>
+<BR>
+</DIV>
+
+<P>
+Once the package is installed according to the above instructions, we
+are ready to use it. Let us, for the sake of example, open an existing
+<TT>pw.x</TT> input file whose name does not match the above specified
+filename pattern for the <FONT COLOR="#8a2be2"><TT>pw-mode</TT></FONT>. In such cases we can load the mode
+with <FONT COLOR="#8a2be2"><TT>M-x pw-mode</TT></FONT> command and we will get the content of the file
+highlighted as in Figure&nbsp;<A HREF="#fig:example"><IMG  ALT="[*]" SRC="crossref.png"></A>.
+
+<P>
+
+<H1><A ID="SECTION00050000000000000000">
+4 Usage</A>
+</H1>
+
+<P>
+
+<H2><A ID="SECTION00051000000000000000">
+4.1 Available modes defined by <TT>qe-modes</TT></A>
+</H2>
+
+<P>
+The <TT>QE-modes</TT> package contains a generic <FONT COLOR="#8a2be2"><TT>qe-mode</TT></FONT> and the following
+specific modes: <FONT COLOR="#8a2be2"><TT>pw-mode</TT></FONT>, <FONT COLOR="#8a2be2"><TT>neb-mode</TT></FONT>, <FONT COLOR="#8a2be2"><TT>cp-mode</TT></FONT>, <FONT COLOR="#8a2be2"><TT>ph-mode</TT></FONT>, <FONT COLOR="#8a2be2"><TT>ld1-mode</TT></FONT>, and <FONT COLOR="#8a2be2"><TT>pp-mode</TT></FONT>.
+The difference between them is only in the extent of the syntax
+highlighting and auto-indentation. Namely, these modes recognize and
+highlight namelists (and their variables) and cards (and their
+options/flags) that they know about.
+The generic <FONT COLOR="#8a2be2"><TT>qe-mode</TT></FONT> is aware of all of them for all those Q<SMALL>UANTUM </SMALL>ESPRESSO programs that have explicit documentation in the form of
+<code>INPUT_</code><FONT COLOR="#0000ff"><TT><I>PROG</I></TT></FONT><code>.html</code> files (where <FONT COLOR="#0000ff"><TT><I>PROG</I></TT></FONT>typically stands for the uppercase name of the program). In contrast,
+a given specific mode is aware only of namelists, variables, cards, and
+options of the corresponding program.
+
+<P>
+
+<DIV class="CENTER"><A ID="fig:insert-template"></A><A ID="267"></A>
+<TABLE>
+<CAPTION class="BOTTOM"><STRONG>Figure:</STRONG>
+The result of executing the <FONT COLOR="#8a2be2"><TT>M-x pp-insert-template</TT></FONT>
+    command, which insert a template for the <TT>pp.x</TT> input file into the
+    current buffer.</CAPTION>
+<TR><TD>
+<DIV class="CENTER">  <IMG STYLE=""
+ SRC="./insert-template.png"
+ ALT="Image insert-template">
+  </DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<H2><A ID="SECTION00052000000000000000">
+4.2 Commands</A>
+</H2>
+
+<P>
+The <TT>QE-modes</TT> package provides the following commands:
+<DL>
+<DT><STRONG>• <FONT COLOR="#8a2be2"><TT>M-X <FONT COLOR="#0000ff"><TT><I>mode</I></TT></FONT>-mode</TT></FONT></STRONG></DT>
+<DD>
+<BR>
+toggles
+  the respective mode, where <FONT COLOR="#0000ff"><TT><I>mode</I></TT></FONT> is one of <TT>qe</TT>,
+  <TT>pw</TT>, <TT>neb</TT>, <TT>cp</TT>, <TT>ph</TT>, <TT>ld1</TT>, or <TT>pp</TT>
+
+<P>
+</DD>
+<DT><STRONG>• <FONT COLOR="#8a2be2"><TT>M-x indent-region</TT></FONT></STRONG></DT>
+<DD>&nbsp;&nbsp;or&nbsp;&nbsp; <FONT COLOR="#8a2be2"><TT>C-M-\</TT></FONT>
+<BR>
+indents region according to <TT>qe-modes</TT> rules, i.e., namelist and card
+  names are left aligned to the first column, while their content is
+  indented by <TT>qe-indent</TT> spaces to the right (see
+  Figure&nbsp;<A HREF="#fig:example"><IMG  ALT="[*]" SRC="crossref.png"></A>; default value of <TT>qe-indent</TT> is 3)
+
+<P>
+</DD>
+<DT><STRONG>• <FONT COLOR="#8a2be2"><TT>M-x <FONT COLOR="#0000ff"><TT><I>prog</I></TT></FONT>-insert-template</TT></FONT></STRONG></DT>
+<DD>
+<BR>
+inserts a respective input file template (see Figure 2); this
+  command may not be defined for all the <FONT COLOR="#0000ff"><TT><I>prog</I></TT></FONT>s; currently
+  supported <FONT COLOR="#0000ff"><TT><I>prog</I></TT></FONT>s are: <TT>pw</TT>, <TT>cp</TT>, <TT>pp</TT>,
+  <TT>neb</TT>, <TT>ph</TT>, <TT>dynmat</TT>, <TT>ld1</TT>,
+  <TT>projwfc</TT>, <TT>dos</TT>, and <TT>bands</TT>.
+
+<P>
+</DD>
+<DT><STRONG>• <FONT COLOR="#8a2be2"><TT>M-x <FONT COLOR="#0000ff"><TT><I>prog-NAMELIST</I></TT></FONT></TT></FONT></STRONG></DT>
+<DD>
+<BR>
+inserts a blank namelist section named <FONT COLOR="#0000ff"><TT><I>NAMELIST</I></TT></FONT>
+<P>
+</DD>
+<DT><STRONG>• <FONT COLOR="#8a2be2"><TT>M-x <FONT COLOR="#0000ff"><TT><I>prog-CARD</I></TT></FONT></TT></FONT></STRONG></DT>
+<DD>
+<BR>
+inserts a blank card section named <FONT COLOR="#0000ff"><TT><I>CARD</I></TT></FONT>; the value of the
+  card's <FONT COLOR="#0000ff"><TT><I>flag</I></TT></FONT> can be selected from the provided list by using
+  the right/left arrow keys
+
+<P>
+</DD>
+<DT><STRONG>• <FONT COLOR="#8a2be2"><TT>M-x <FONT COLOR="#0000ff"><TT><I>prog-variable</I></TT></FONT></TT></FONT></STRONG></DT>
+<DD>
+<BR>
+inserts a namelist variable named <FONT COLOR="#0000ff"><TT><I>variable</I></TT></FONT>
+<P>
+</DD>
+</DL>
+The above italicized words have the following meaning:
+
+<UL>
+<LI><FONT COLOR="#0000ff"><TT><I>prog</I></TT></FONT> stands for the lowercase name of respective program
+  without the <TT>.x</TT> suffix (i.e. it is the lowercase variant of
+  the <FONT COLOR="#0000ff"><TT><I>PROG</I></TT></FONT> in the respective <TT>INPUT_<FONT COLOR="#0000ff"><TT><I>PROG</I></TT></FONT>.html</TT>
+  filename)
+</LI>
+<LI><FONT COLOR="#0000ff"><TT><I>NAMELIST</I></TT></FONT> is the uppercase name for a given Fortran namelist
+</LI>
+<LI><FONT COLOR="#0000ff"><TT><I>CARD</I></TT></FONT> is the uppercase name for a given card
+</LI>
+<LI><FONT COLOR="#0000ff"><TT><I>variable</I></TT></FONT> is the lowercase name for a given namelist' variable
+</LI>
+</UL>
+Note that in the above commands the spelling of namelist and card
+names (<FONT COLOR="#0000ff"><TT><I>NAMELIST</I></TT></FONT> and <FONT COLOR="#0000ff"><TT><I>CARD</I></TT></FONT>) are intentionally made uppercase
+as to differentiate them from the names of variables which are
+intentionally made lowercase.<A ID="tex2html4"
+  HREF="#foot175"><SUP>2</SUP></A>
+<P>
+
+<H2><A ID="SECTION00053000000000000000">
+4.3 Auto-completion mechanism</A>
+</H2>
+It may at first seem that the above described commands are not a big
+deal. But given that Q<SMALL>UANTUM </SMALL>ESPRESSO contains hundreds of variables it is
+difficult to remember the precise spelling for all of them. It is here
+where these commands becomes useful due to Emacs auto-completion
+mechanism. For example, typing a space or tab after <TT>M-x pw-C</TT> 
+prints all the namelists and cards that starts with letter ``C'', i.e.:
+<PRE>
+   Possible completions are:
+   pw-CELL                              pw-CELL_PARAMETERS
+   pw-CONSTRAINTS                       pw-CONTROL
+</PRE>
+whereas typing a space or tab after <TT>M-x pw-c</TT>
+prints all the <TT>pw.x</TT> variables that starts with letter ``c'', i.e.:
+<PRE>
+   Possible completions are:
+   pw-c                                 pw-calculation
+   pw-cell_dofree                       pw-cell_dynamics
+   pw-cell_factor                       pw-celldm
+   pw-constrained_magnetization         pw-conv_thr
+   pw-conv_thr_init                     pw-conv_thr_multi
+   pw-cosab                             pw-cosac
+   pw-cosbc
+</PRE>
+
+From this list we can see that there is only one variable that starts
+with ``ca'', hence typing <TT>M-x pw-ca[space][return]</TT>, where
+<TT>[space][return]</TT> stands for space and return keys, prints at
+the point position of the current buffer:
+<PRE>
+   calculation = ''
+</PRE>
+
+<P>
+
+<H3><A ID="SECTION00053100000000000000">
+4.3.1 Selection of card's flag value</A>
+</H3>
+
+<P>
+Another available completion is the selection of the card's flag
+value. For example, by typing:
+<PRE>
+   M-x pw-K\_P[space][enter]
+</PRE>
+the following list of possible values for the <code>K_POINTS</code>'s flag
+appears:
+<DIV class="LEFT">
+&nbsp;&nbsp;&nbsp;<TT>Select the flag: {</TT><B>tpiba</B><TT> | automatic |
+  crystal | gamma | ...}</TT>.
+
+</DIV>
+The currently active value is written in
+bold; to use it press <TT>[enter]</TT>, whereas to select another
+value use the right (<!-- MATH
+ $\rightarrow$
+ -->
+→) or left (<!-- MATH
+ $\leftarrow$
+ -->
+←) arrow keys.
+
+<P>
+
+<H2><A ID="SECTION00054000000000000000">
+4.4 Controlling indentation</A>
+</H2>
+
+<P>
+The basic indentation offset in <TT>qe-modes</TT> is 3. It is controlled by
+<TT>qe-indent</TT> variable. Hence if you want to change it, add the
+following into your <TT>user-init-file</TT>
+(e.g. <TT>$HOME/.emacs</TT>):
+<DIV class="LEFT">
+<code>   (setq qe-indent </code><FONT COLOR="#0000ff"><TT><I>myOffset</I></TT></FONT><code>)</code>
+
+</DIV>
+where <FONT COLOR="#0000ff"><TT><I>myOffset</I></TT></FONT> is the integer value of the offset of your
+choice. For no indentation, set the <TT>qe-indent</TT> to 0 (this
+implies that auto-indentation will make all lines non-indented).
+
+<P>
+To disable the auto-indentation for a given mode (are you really sure
+you want to do this), add the following into your
+<TT>user-init-file</TT>:
+
+<P>
+
+<DIV class="LEFT"><FONT SIZE="-1"><code>   (add-hook '</code><FONT COLOR="#0000ff"><TT><I>mode</I></TT></FONT><code>-mode (lambda () (setq indent-line-function 'indent-relative)))</code>
+</FONT></DIV>
+
+<P>
+where <FONT COLOR="#0000ff"><TT><I>mode</I></TT></FONT> is <TT>qe</TT>, <TT>pw</TT>, <TT>neb</TT>, <TT>cp</TT>,
+<TT>ph</TT>, <TT>ld1</TT>, or <TT>pp</TT>.
+
+<P>
+
+<H2><A ID="SECTION00055000000000000000">
+4.5 Note to <TT>Vi</TT> users</A>
+</H2>
+
+<P>
+A simple way to get a <TT>QE-modes</TT> aware <TT>Vi</TT>-compatible editor is
+to use the <TT>Evil</TT> package &ndash; an <B>e</B>xtensible <B>vi</B>
+<B>l</B>ayer for Emacs
+(<TT>https://bitbucket.org/lyro/evil/wiki/Home</TT>). With the
+<TT>Evil</TT> mode enabled, Emacs will behave like the <TT>Vi</TT>
+editor, but with the <TT>QE-modes</TT> support.
+
+<P>
+
+<H1><A ID="SECTION00060000000000000000">
+About this document ...</A>
+</H1>
+ <STRONG>
+  <IMG STYLE=""
+ SRC="./quantum_espresso.png"
+ ALT="Image quantum_espresso"> 
+<BR>  <FONT SIZE="+4"><TT>QE-emacs-modes</TT> User's Guide (v.7.1) 
+</FONT></STRONG><P>
+This document was generated using the
+<A NAME="http://www.latex2html.org/">LaTeX2HTML</A> translator Version 2019.2 (Released June 5, 2019)
+<P>
+The command line arguments were: <BR>
+ <kbd>latex2html -t 'User's Guide for the QE-modes package' -html_version 3.2,math -toc_depth 5 -split 0 -toc_stars -show_section_numbers -local_icons -image_type png user_guide.tex</kbd>
+<P>
+The translation was initiated on 2022-06-15
+<BR><HR><H4>Footnotes</H4>
+<DL>
+<DT><A ID="foot106">...qe-mode</A><A
+ HREF="user_guide.html#tex2html2"><SUP>1</SUP></A></DT>
+<DD>Please note the difference between <TT>qe-modes</TT> and
+  <FONT COLOR="#8a2be2"><TT>qe-mode</TT></FONT>: the first implies the whole package, whereas the second
+  means the generic QE mode, which is only one among the available
+  modes in the <TT>qe-modes</TT> package.
+
+</DD>
+<DT><A ID="foot175">... lowercase.</A><A
+ HREF="user_guide.html#tex2html4"><SUP>2</SUP></A></DT>
+<DD>Note that in Q<SMALL>UANTUM </SMALL>ESPRESSO the namelist
+  and variable names are case-insensitive, while card names are
+  case-sensitive.
+
+</DD>
+</DL><HR>
+<!--Navigation Panel-->
+<IMG WIDTH="81" HEIGHT="24" ALT="next_inactive" SRC="nx_grp_g.png"> 
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up_g.png"> 
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev_g.png">   
+<BR>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>
