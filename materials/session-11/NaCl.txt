@@ -1,0 +1,40 @@
+! Teaching template: replace UPF filenames and test numerical convergence.
+&CONTROL
+  calculation = 'scf'
+  prefix = 'NaCl'
+  pseudo_dir = './pseudo'
+  outdir = './tmp'
+/
+&SYSTEM
+  ibrav = 0
+  nat = 8
+  ntyp = 2
+  ecutwfc = 50
+  ecutrho = 400
+  occupations = 'fixed'
+/
+&ELECTRONS
+  conv_thr = 1.0d-8
+/
+
+ATOMIC_SPECIES
+Na 22.98977 Na.UPF
+Cl 35.45    Cl.UPF
+
+ATOMIC_POSITIONS crystal
+Na 0.0 0.0 0.0
+Na 0.0 0.5 0.5
+Na 0.5 0.0 0.5
+Na 0.5 0.5 0.0
+Cl 0.5 0.5 0.5
+Cl 0.5 0.0 0.0
+Cl 0.0 0.5 0.0
+Cl 0.0 0.0 0.5
+
+K_POINTS automatic
+4 4 4 0 0 0
+
+CELL_PARAMETERS angstrom
+5.62 0.00 0.00
+0.00 5.62 0.00
+0.00 0.00 5.62
