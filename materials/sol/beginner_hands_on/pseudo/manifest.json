@@ -1,0 +1,27 @@
+[
+  {
+    "filename": "Si.pz-vbc.UPF",
+    "source": "../handson_pwscf/pseudo/Si.pz-vbc.UPF",
+    "sha256": "d75dd6b0be0aa10587fc95900cfd6ba7314d461a8276a81df34f009d0bfc075d"
+  },
+  {
+    "filename": "Al.pz-vbc.UPF",
+    "source": "../handson_pwscf/pseudo/Al.pz-vbc.UPF",
+    "sha256": "365908a954e9908bc4d01c74024dea0dfdfb22738812ed916e5718169ca704db"
+  },
+  {
+    "filename": "Fe.pbe-nd-rrkjus.UPF",
+    "source": "../handson_pwscf/pseudo/Fe.pbe-nd-rrkjus.UPF",
+    "sha256": "a4e9824dbcad2cb25678b4d5c048f64dc421d3becf0fae2083338e08247a34f8"
+  },
+  {
+    "filename": "C.pbe-rrkjus.UPF",
+    "source": "../handson_pwscf/pseudo/C.pbe-rrkjus.UPF",
+    "sha256": "8afbc431d2ca3456fc8c328d6652dd131f6b67e5c9ac987518fb91f78f9c6401"
+  },
+  {
+    "filename": "H.pbe-rrkjus.UPF",
+    "source": "../handson_pwscf/pseudo/H.pbe-rrkjus.UPF",
+    "sha256": "0e1c00ee8329aa9b5951ee2b0f20fa500b7590cc9dfcd15cdb3819b39a0acb43"
+  }
+]

@@ -1,0 +1,12 @@
+tmp/
+*.out
+*.csv
+!sample_results/*.csv
+si_cutoff_*.in
+si_mesh_*.in
+si_lattice_*.in
+si.practice.in
+si.24.in
+si.bands.dat*
+fe.dos.dat
+__pycache__/

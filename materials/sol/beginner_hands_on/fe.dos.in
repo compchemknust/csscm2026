@@ -1,0 +1,5 @@
+&DOS
+ prefix='fe', outdir='./tmp', fildos='fe.dos.dat'
+ Emin=-20, Emax=30, DeltaE=0.05
+ ngauss=0, degauss=0.01
+/

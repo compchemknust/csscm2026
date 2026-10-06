@@ -1,0 +1,7 @@
+case,final_energy_Ry_per_cell,normal_termination,SCF_converged,geometry_converged
+si.scf,-15.84735129,True,True,not applicable
+si.final.scf,-15.85334205,True,True,not applicable
+al.scf,-4.18941623,True,True,not applicable
+fe.scf,-55.80086541,True,True,not applicable
+graphene.scf,-22.78913290,True,True,not applicable
+graphane.relax,-25.15016588,True,True,True

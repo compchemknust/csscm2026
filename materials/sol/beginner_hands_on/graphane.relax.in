@@ -1,0 +1,27 @@
+&CONTROL
+ calculation='relax', prefix='graphane'
+ pseudo_dir='./pseudo', outdir='./tmp'
+ tprnfor=.true., tstress=.true.
+ etot_conv_thr=1.0d-5, forc_conv_thr=1.0d-4, nstep=100
+/
+&SYSTEM
+ ibrav=4, A=2.54, C=20.0, nat=4, ntyp=2
+ ecutwfc=40, ecutrho=320, nbnd=8
+ occupations='fixed'
+/
+&ELECTRONS
+ conv_thr=1.0d-8, mixing_beta=0.4
+/
+&IONS
+ ion_dynamics='bfgs'
+/
+ATOMIC_SPECIES
+C 12.011 C.pbe-rrkjus.UPF
+H 1.008 H.pbe-rrkjus.UPF
+ATOMIC_POSITIONS angstrom
+C 0.0 0.0000000000 10.20
+C 0.0 1.4664696837 9.80
+H 0.0 0.0000000000 11.30
+H 0.0 1.4664696837 8.70
+K_POINTS automatic
+6 6 1 0 0 0
